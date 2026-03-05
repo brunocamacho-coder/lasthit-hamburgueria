@@ -1,5 +1,3 @@
-```css
-/* ================= RESET ================= */
 
 * {
   margin: 0;
@@ -65,56 +63,35 @@ body {
 /* ================= HERO / TÍTULO ================= */
 
 .hero-title {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
   margin-bottom: 60px;
   padding: 0 20px;
+  position: relative;
 }
 
-.titulo-logo {
-  text-align: center;
-  font-size: 60px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: #e6c27a;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0px #000, 4px 4px 8px rgba(0,0,0,0.6);
-  font-family: Georgia, serif;
-  margin-bottom: 0;
-}
-
-.titulo-logo span {
-  display: block;
-  font-size: 28px;
-  letter-spacing: 6px;
-  margin-top: 10px;
-}
-
-.titulo-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+.logo-hamburgueria {
+  width: 350px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .logo-left,
 .logo-right {
-  width: 70px;
-  flex-shrink: 0;
-}
-
-.logo-hamburgueria {
-  width: 150px;
+  width: 90px;
   height: auto;
   flex-shrink: 0;
 }
 
 .decor-right {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 150px;
   height: auto;
-  flex-shrink: 0;
 }
 
 #dotaLogo {
@@ -141,14 +118,14 @@ body {
   padding: 0 20px;
 }
 
-/* ================= GRID DE LANCHES ================= */
+/* ================= GRID DE LANCHES — 2 COLUNAS ================= */
 
 .lanches {
-  max-width: 1400px;
+  max-width: 900px;
   margin: 0 auto 80px auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
@@ -170,7 +147,7 @@ body {
 
 .lanche img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -179,20 +156,20 @@ body {
 .lanche h2 {
   margin: 12px 0 6px;
   color: #e6c27a;
-  font-size: 18px;
+  font-size: 20px;
   word-wrap: break-word;
 }
 
 .lanche span {
   color: #e6c27a;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 0.3px;
 }
 
 .ingredientes {
   color: #e6c27a;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.4;
   text-align: center;
   margin: 6px 0 10px;
@@ -234,45 +211,28 @@ body {
     letter-spacing: 1px;
   }
 
-  /* Hero / Título */
+  /* Hero */
   .hero-title {
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 15px;
     padding: 0 15px;
   }
 
   .logo-hamburgueria {
-    position: static !important;
-    width: 100px;
-    margin: 0 auto 10px;
-  }
-
-  .decor-right {
-    position: static !important;
-    width: 100px;
-    margin: 10px auto 0;
-  }
-
-  .titulo-wrapper {
-    flex-direction: column;
-    gap: 10px;
+    width: 250px;
   }
 
   .logo-left,
   .logo-right {
-    width: 50px;
+    width: 60px;
   }
 
-  .titulo-logo {
-    font-size: 28px;
-    letter-spacing: 1px;
-  }
-
-  .titulo-logo span {
-    font-size: 16px;
-    letter-spacing: 2px;
+  .decor-right {
+    position: static !important;
+    transform: none;
+    width: 100px;
+    margin: 10px auto 0;
   }
 
   .categoria-titulo {
@@ -281,7 +241,7 @@ body {
     margin-bottom: 20px;
   }
 
-  /* Grid — uma coluna no mobile */
+  /* Grid — uma coluna no celular */
   .lanches {
     grid-template-columns: 1fr;
     padding: 0 15px;
@@ -291,12 +251,20 @@ body {
   /* Cards */
   .lanche img {
     height: auto;
-    max-height: 250px;
+    max-height: 280px;
+  }
+
+  .lanche h2 {
+    font-size: 20px;
+  }
+
+  .lanche span {
+    font-size: 18px;
   }
 
   .ingredientes {
-    font-size: 15px;
-    -webkit-line-clamp: 3;
+    font-size: 16px;
+    -webkit-line-clamp: 4;
   }
 
   /* Formulário */
@@ -327,19 +295,20 @@ body {
 
 @media (max-width: 400px) {
 
-  .titulo-logo {
-    font-size: 24px;
+  .logo-hamburgueria {
+    width: 200px;
   }
 
-  .logo-hamburgueria,
+  .logo-left,
+  .logo-right {
+    width: 50px;
+  }
+
   .decor-right {
     width: 80px;
   }
 
   .lanche h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
-```
-
-Tudo consolidado e limpo. Só substituir o arquivo inteiro.
