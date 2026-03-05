@@ -1,46 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finalizar Pedido</title>
 
 <style>
 
-body{
-font-family:Arial;
-background:#111;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.form-box{
-background:#1a1a1a;
-padding:30px;
-border-radius:10px;
-width:350px;
+.form-box {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
 }
 
-input,select,textarea{
-width:100%;
-padding:10px;
-margin-top:8px;
-margin-bottom:15px;
-border-radius:6px;
-border:none;
+.form-box h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #e6c27a;
+  text-align: center;
+  word-wrap: break-word;
 }
 
-button{
-width:100%;
-padding:12px;
-background:#ff3c00;
-border:none;
-color:white;
-font-weight:bold;
-border-radius:6px;
-cursor:pointer;
+label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #ccc;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;          /* 16px impede zoom automático no iOS */
+  background: #2a2a2a;
+  color: white;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background: #ff3c00;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #e03500;
 }
 
 </style>
@@ -51,25 +86,25 @@ cursor:pointer;
 
 <div class="form-box">
 
-<h2 id="lancheNome"></h2>
+  <h2 id="lancheNome"></h2>
 
-<label>Nome</label>
-<input id="nome">
+  <label for="nome">Nome</label>
+  <input id="nome" placeholder="Seu nome">
 
-<label>Endereço</label>
-<input id="endereco">
+  <label for="endereco">Endereço</label>
+  <input id="endereco" placeholder="Rua, número, bairro">
 
-<label>Pagamento</label>
-<select id="pagamento">
-<option>PIX</option>
-<option>Dinheiro</option>
-<option>Cartão</option>
-</select>
+  <label for="pagamento">Pagamento</label>
+  <select id="pagamento">
+    <option>PIX</option>
+    <option>Dinheiro</option>
+    <option>Cartão</option>
+  </select>
 
-<label>Observações</label>
-<textarea id="obs"></textarea>
+  <label for="obs">Observações</label>
+  <textarea id="obs" placeholder="Ex: sem cebola, ponto da carne..."></textarea>
 
-<button onclick="enviarPedido()">Enviar pedido</button>
+  <button onclick="enviarPedido()">Enviar pedido</button>
 
 </div>
 
@@ -78,19 +113,19 @@ cursor:pointer;
 const params = new URLSearchParams(window.location.search)
 
 const lanche = params.get("nome")
-const preco = params.get("preco")
+const preco  = params.get("preco")
 
 document.getElementById("lancheNome").innerText =
-`${lanche} - R$${preco}`
+  `${lanche} - R$${preco}`
 
 function enviarPedido(){
 
-let nome = document.getElementById("nome").value
-let endereco = document.getElementById("endereco").value
-let pagamento = document.getElementById("pagamento").value
-let obs = document.getElementById("obs").value
+  let nome      = document.getElementById("nome").value
+  let endereco  = document.getElementById("endereco").value
+  let pagamento = document.getElementById("pagamento").value
+  let obs       = document.getElementById("obs").value
 
-let mensagem =
+  let mensagem =
 `Pedido - LastHit Hamburgueria
 
 Lanche: ${lanche}
@@ -103,10 +138,10 @@ Pagamento: ${pagamento}
 
 Obs: ${obs}`
 
-let url =
-`https://wa.me/5514988416460?text=${encodeURIComponent(mensagem)}`
+  let url =
+    `https://wa.me/5514988416460?text=${encodeURIComponent(mensagem)}`
 
-window.open(url)
+  window.open(url)
 
 }
 
@@ -114,3 +149,5 @@ window.open(url)
 
 </body>
 </html>
+```
+
