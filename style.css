@@ -264,3 +264,25 @@ transition:transform 0.2s ease;
 #dotaLogo:hover{
 transform:scale(1.08);
 }
+@media (max-width: 768px){
+
+.lanche img{
+width:100%;
+height:auto;
+}
+
+.lanches{
+grid-template-columns:1fr;
+padding:20px;
+}
+
+.titulo-logo{
+font-size:40px;
+}
+
+}.lanche img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
