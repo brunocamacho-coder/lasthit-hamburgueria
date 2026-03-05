@@ -322,3 +322,42 @@ height:auto;
 }
 
 }
+/* ===== AJUSTE HEADER MOBILE ===== */
+
+@media (max-width:768px){
+
+.hero-title{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:20px;
+}
+
+.logo-hamburgueria{
+position:static;
+width:120px;
+margin-bottom:10px;
+}
+
+.decor-right{
+position:static;
+width:120px;
+margin-top:10px;
+}
+
+.titulo-wrapper{
+flex-direction:column;
+gap:10px;
+}
+
+.logo-left,
+.logo-right{
+width:50px;
+}
+
+.titulo-logo{
+font-size:32px;
+}
+
+}
