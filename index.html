@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>LastHit Hamburgueria</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.lanche{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+#dotaLogo{
+cursor:pointer;
+transition:transform .2s;
+}
+
+#dotaLogo:hover{
+transform:scale(1.1);
+}
+
+/* imagem do adriano */
+.hero-title{
+position:relative;
+}
+
+.decor-chef{
+position:absolute;
+right:60px;
+top:10px;
+width:140px;
+height:auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="nav-container">
+
+<div class="menu-toggle" id="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<ul class="nav-menu" id="nav-menu">
+<li><a href="#">História</a></li>
+<li><a href="#">Contato</a></li>
+</ul>
+
+</nav>
+
+
+<div id="main">
+
+<section class="hero-title">
+
+<img src="./Assets/logo.jpg"
+class="logo-hamburgueria"
+alt="Logo LastHit">
+
+<div class="titulo-wrapper">
+
+<img src="./Assets/dota2.png"
+class="logo-left"
+alt="Dota"
+id="dotaLogo">
+
+<h1 class="titulo-logo">
+LAST HIT
+<span>HAMBURGUERIA</span>
+</h1>
+
+<img src="./Assets/ceptor.png"
+class="logo-right"
+alt="Ceptor">
+
+</div>
+
+<img src="./Assets/driano.png"
+class="decor-chef"
+alt="Adriano">
+
+</section>
+
+
+<h1 class="categoria-titulo">Burgers</h1>
+
+<section class="lanches">
+
+<a href="pedido.html?nome=Abaddon&preco=33.99" class="lanche">
+<img src="./Assets/abaddon.jpg">
+<h2>Abaddon</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar duplo, onion rings, maionese da casa</p>
+<span>R$ 33,99</span>
+</a>
+
+<a href="pedido.html?nome=Axe&preco=38.99" class="lanche">
+<img src="./Assets/axe.jpg">
+<h2>Axe</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, bacon, onion rings, barbecue</p>
+<span>R$ 38,99</span>
+</a>
+
+<a href="pedido.html?nome=Bane&preco=29.99" class="lanche">
+<img src="./Assets/bane.jpg">
+<h2>Bane</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, onion rings, maionese</p>
+<span>R$ 29,99</span>
+</a>
+
+<a href="pedido.html?nome=Chen&preco=29.99" class="lanche">
+<img src="./Assets/chen.jpg">
+<h2>Chen</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, alface, tomate, cebola roxa, picles</p>
+<span>R$ 29,99</span>
+</a>
+
+<a href="pedido.html?nome=Doctor&preco=28.99" class="lanche">
+<img src="./Assets/doctor.jpg">
+<h2>Doctor</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, bacon, alface</p>
+<span>R$ 28,99</span>
+</a>
+
+<a href="pedido.html?nome=Lycan&preco=24.99" class="lanche">
+<img src="./Assets/dog-lycan.jpg">
+<h2>Lycan</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, bacon, maionese</p>
+<span>R$ 24,99</span>
+</a>
+
+<a href="pedido.html?nome=Tusk&preco=16.99" class="lanche">
+<img src="./Assets/dog-tusk.jpg">
+<h2>Tusk</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, cebola crispy</p>
+<span>R$ 16,99</span>
+</a>
+
+<a href="pedido.html?nome=Ember&preco=36.99" class="lanche">
+<img src="./Assets/ember.jpg">
+<h2>Ember</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, bacon, onion rings</p>
+<span>R$ 36,99</span>
+</a>
+
+<a href="pedido.html?nome=Fera Primal&preco=48.99" class="lanche">
+<img src="./Assets/feraprimal.jpg">
+<h2>Fera Primal</h2>
+<p class="ingredientes">Pão brioche, hambúrguer triplo 140g, cheddar, maionese bacon, onion rings, barbecue</p>
+<span>R$ 48,99</span>
+</a>
+
+<a href="pedido.html?nome=Keeper&preco=29.99" class="lanche">
+<img src="./Assets/keeper.jpg">
+<h2>Keeper</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, alface, tomate</p>
+<span>R$ 29,99</span>
+</a>
+
+<a href="pedido.html?nome=Kez&preco=29.99" class="lanche">
+<img src="./Assets/kez.jpg">
+<h2>Kez</h2>
+<p class="ingredientes">Pão brioche, hambúrguer 140g, cheddar, bacon, onion rings</p>
+<span>R$ 29,99</span>
+</a>
+
+<audio id="dotaMusic" src="./Assets/dota.mp3"></audio>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const dotaLogo = document.getElementById("dotaLogo");
+const dotaMusic = document.getElementById("dotaMusic");
+
+dotaLogo.addEventListener("click", function(){
+
+if(dotaMusic.paused){
+dotaMusic.play();
+}else{
+dotaMusic.pause();
+}
+
+});
+
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click",()=>{
+toggle.classList.toggle("active");
+menu.classList.toggle("active");
+});
+
+});
+
+</script>
+
+</body>
+</html>

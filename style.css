@@ -1,0 +1,266 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #4c0202;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #8b0000;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e6c27a;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #e6c27a;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #ffd700;
+}
+
+/* ================= CONTEÚDO ================= */
+
+#main {
+    margin-top: 100px;
+}
+
+/* ================= TÍTULO ================= */
+
+.titulo-logo {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #e6c27a;
+    text-transform: uppercase;
+    text-shadow:
+        2px 2px 0px #000,
+        4px 4px 8px rgba(0,0,0,0.6);
+    font-family: Georgia, serif;
+    margin-bottom: 50px;
+}
+
+.titulo-logo span {
+    display: block;
+    font-size: 28px;
+    letter-spacing: 6px;
+    margin-top: 10px;
+}
+
+/* ================= GRID DE LANCHES ================= */
+
+.lanches {
+    max-width: 1400px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* ================= CARD ================= */
+
+.lanche {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.lanche:hover {
+    transform: translateY(-5px);
+}
+
+.lanche img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.lanche h2 {
+    margin: 12px 0 6px;
+    color: #e6c27a;
+}
+
+.lanche span {
+    color: #e6c27a;
+    font-weight: bold;
+}
+.nav-menu li a {
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 900;
+
+    color: #e6c27a;
+
+    text-shadow:
+        2px 2px 0px #000,
+        3px 3px 8px rgba(0,0,0,0.8);
+}
+
+.dota-decor {
+    position: absolute;
+    left: 30px;
+    top: 20px;   /* sobe bastante */
+}
+.hero-title {
+    position: relative;
+}
+
+.dota-decor {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hero-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.titulo-container {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* espaço entre imagem e texto */
+}
+
+.dota-side {
+    width: 80px;   /* tamanho menor */
+    height: auto;
+}
+.hero-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.titulo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-left,
+.logo-right {
+    width: 70px;
+}
+.hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 60px;
+}
+
+.logo-hamburgueria {
+    width: 320px;        /* maior */
+    height: auto;
+    margin-left: -90px;  /* empurra mais para esquerda */
+}
+.hero-title {
+    position: relative;
+}
+
+.logo-hamburgueria {
+    position: absolute;
+    left: 80px;   /* controla a distância da borda */
+    width: 150px;
+}
+.categoria-titulo{
+
+text-align:center;
+font-size:42px;
+color:#e6c27a;
+font-family:Georgia, serif;
+
+margin-top:80px;
+margin-bottom:30px;
+
+letter-spacing:4px;
+text-transform:uppercase;
+
+text-shadow:
+2px 2px 0 #000,
+4px 4px 8px rgba(0,0,0,0.6);
+
+}
+.ingredientes{
+    color:#e6c27a;           /* dourado */
+    font-size:13px;
+    margin-top:4px;
+    margin-bottom:6px;
+    line-height:1.3;
+    text-align:center;
+    opacity:0.9;
+}
+.ingredientes{
+  color:#e6c27a;
+  font-size:13px;
+  line-height:1.35;
+  text-align:center;
+  margin:4px 0 8px;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.lanche{
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.lanche:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+.lanche span{
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+@media (max-width:480px){
+  .lanche img{ height:160px; }
+  .ingredientes{ font-size:12px; }
+}
+#dotaLogo{
+cursor:pointer;
+transition:transform 0.2s ease;
+}
+
+#dotaLogo:hover{
+transform:scale(1.08);
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Finalizar Pedido</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#111;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.form-box{
+background:#1a1a1a;
+padding:30px;
+border-radius:10px;
+width:350px;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:15px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#ff3c00;
+border:none;
+color:white;
+font-weight:bold;
+border-radius:6px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2 id="lancheNome"></h2>
+
+<label>Nome</label>
+<input id="nome">
+
+<label>Endereço</label>
+<input id="endereco">
+
+<label>Pagamento</label>
+<select id="pagamento">
+<option>PIX</option>
+<option>Dinheiro</option>
+<option>Cartão</option>
+</select>
+
+<label>Observações</label>
+<textarea id="obs"></textarea>
+
+<button onclick="enviarPedido()">Enviar pedido</button>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search)
+
+const lanche = params.get("nome")
+const preco = params.get("preco")
+
+document.getElementById("lancheNome").innerText =
+`${lanche} - R$${preco}`
+
+function enviarPedido(){
+
+let nome = document.getElementById("nome").value
+let endereco = document.getElementById("endereco").value
+let pagamento = document.getElementById("pagamento").value
+let obs = document.getElementById("obs").value
+
+let mensagem =
+`Pedido - LastHit Hamburgueria
+
+Lanche: ${lanche}
+Preço: R$${preco}
+
+Cliente: ${nome}
+Endereço: ${endereco}
+
+Pagamento: ${pagamento}
+
+Obs: ${obs}`
+
+let url =
+`https://wa.me/5514988416460?text=${encodeURIComponent(mensagem)}`
+
+window.open(url)
+
+}
+
+</script>
+
+</body>
+</html>
